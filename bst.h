@@ -34,12 +34,15 @@ public:
     void setLeft(Node<Key, Value>* left);
     void setRight(Node<Key, Value>* right);
     void setValue(const Value &value);
-
-protected:
-    std::pair<const Key, Value> item_;
-    Node<Key, Value>* parent_;
+		std::pair<const Key, Value> item_;
+		Node<Key, Value>* parent_;
     Node<Key, Value>* left_;
     Node<Key, Value>* right_;
+
+
+protected:
+
+
 };
 
 /*
@@ -193,12 +196,12 @@ template <typename Key, typename Value>
 class BinarySearchTree
 {
 public:
-    BinarySearchTree(); //TODO
-    virtual ~BinarySearchTree(); //TODO
-    virtual void insert(const std::pair<const Key, Value>& keyValuePair); //TODO
-    virtual void remove(const Key& key); //TODO
-    void clear(); //TODO
-    bool isBalanced() const; //TODO
+    BinarySearchTree(); 
+    virtual ~BinarySearchTree(); 
+    virtual void insert(const std::pair<const Key, Value>& keyValuePair); 
+    virtual void remove(const Key& key); 
+    void clear(); 
+    bool isBalanced() const; 
     void print() const;
     bool empty() const;
 
@@ -208,7 +211,7 @@ public:
     /**
     * An internal iterator class for traversing the contents of the BST.
     */
-    class iterator  // TODO
+    class iterator  // 
     {
     public:
         iterator();
@@ -249,8 +252,7 @@ protected:
     // Add helper functions here
 		bool isBalancedHelper(Node<Key, Value>* node) const ; // Performs is Balanced
 		int height(Node<Key, Value>* node) const ; // Gets the height
-        void clearHelper(Node<Key, Value>* node) ; // Use recursion to inorder delete each element
-
+    void clearHelper(Node<Key, Value>* node) ; // Use recursion to inorder delete each element
 
 protected:
     Node<Key, Value>* root_;
@@ -694,6 +696,7 @@ int BinarySearchTree<Key, Value>::height(Node<Key, Value>* node) const {
 		if (leftHeight < rightHeight){
 			numToReturn = rightHeight;
 		}
+		//this->height = 1 + numToReturn; 
     return 1 + (numToReturn);
 }
 
